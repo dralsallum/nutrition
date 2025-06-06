@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "../../assets/make.png";
 import ArrowCurve from "../../assets/arrowCurve.png";
+import { Link } from "react-router-dom";
 
 const MaFirst = styled.div`
   background: #fff;
@@ -94,7 +95,7 @@ const ButtonSubContainer = styled.div`
   text-weight: 800;
 `;
 
-const ButtonAt = styled.button`
+const ButtonAt = styled(Link)`
   font-size: 1.125rem;
   line-height: 1.55556;
   color: #fff;
@@ -109,11 +110,20 @@ const ButtonAt = styled.button`
   box-shadow: 0 4px 4px -4px #1a1a1929;
   border: none;
   cursor: pointer;
-  text-weight: 800;
+  font-weight: 800;
+
+  /* keep text white even when the link is hovered, focused, active, or visited */
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: #fff;
+  }
 
   &:hover {
     background-color: #e55a2b;
   }
+
   &:focus {
     outline: none;
   }
@@ -248,7 +258,7 @@ const Very = () => {
 
               <ButtonContainer>
                 <ButtonSubContainer>
-                  <ButtonAt>هل أنا مشمول؟</ButtonAt>
+                  <ButtonAt to={"/recommendation"}>هل أنا مشمول؟</ButtonAt>
                   <ArrowContainer></ArrowContainer>
                 </ButtonSubContainer>
               </ButtonContainer>
