@@ -1,0 +1,11 @@
+export { default as NavTech } from "./NavTech/NavTech";
+export { default as Main } from "./Main/Main";
+export { default as Quiz } from "./Quiz/Quiz";
+export { default as Recommendation } from "./Recommendation/Recommendation";
+export { default as Practice } from "./Practice/Practice";
+export { default as Road } from "./Road/Road";
+export { default as Checkout } from "./Checkout/Checkout";
+export { default as Very } from "./Very/Very";
+export { default as Phone } from "./Phone/Phone";
+export { default as Article } from "./Article/Article";
+export { default as Footer } from "./Footer/Footer";
