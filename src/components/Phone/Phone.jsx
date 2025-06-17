@@ -25,24 +25,19 @@ const Phone = () => {
     {
       text: "طور مستواك خطوة بخطوة",
       subText: "احرص على تطوير مهاراتك في اللغة الإنجليزية بشكل تدريجي ومتقدم.",
-      imgSrc: "https://alsallum.s3.eu-north-1.amazonaws.com/options.png",
+      imgSrc: "https://alsallum.s3.eu-north-1.amazonaws.com/educationDiet.png",
     },
     {
       text: "تعلم الإنجليزي بطريقة تفاعلية",
       subText:
         "استمتع بتجربة تعلم تفاعلية وفعالة تضمن لك التقدم السريع والملحوظ.",
-      imgSrc: "https://alsallum.s3.eu-north-1.amazonaws.com/interactive.png",
+      imgSrc: "https://alsallum.s3.eu-north-1.amazonaws.com/start.png",
     },
     {
       text: "تعلم من القصص",
       subText:
         "استمتع بقراءة القصص الممتعة وتعلم اللغة الإنجليزية من خلال السرد.",
-      imgSrc: "https://alsallum.s3.eu-north-1.amazonaws.com/stories.png",
-    },
-    {
-      text: "تعلم مفردات جديدة",
-      subText: "قم بتوسيع قاموسك اللغوي وتعلم كلمات جديدة بطريقة ممتعة وفعالة.",
-      imgSrc: "https://alsallum.s3.eu-north-1.amazonaws.com/words.png",
+      imgSrc: "https://alsallum.s3.eu-north-1.amazonaws.com/report.png",
     },
   ];
 

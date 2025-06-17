@@ -35,7 +35,6 @@ export const NavContanier = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   margin: 0 0.25rem;
   flex: 0 0 auto;
   margin-left: 0;

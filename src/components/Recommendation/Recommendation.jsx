@@ -62,7 +62,9 @@ import {
   OrderTotalText,
   SubmitOrderButton,
   InfoImg,
+  Logoimg,
 } from "./Recommendation.elements";
+import Logo from "../../assets/no-logo.png";
 
 const questions = [
   {
@@ -864,7 +866,9 @@ const Recommendation = () => {
               >
                 رجوع
               </BackCon>
-              <LogoCon>🏥</LogoCon>
+              <LogoCon to={"/"}>
+                <Logoimg src={Logo} alt="" />
+              </LogoCon>
               <BasketIcon />
             </ProgressTitle>
             <ProgressSub>

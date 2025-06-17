@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Layout Wrappers
@@ -64,12 +65,23 @@ export const ProgressHeader = styled.div`
   }
 `;
 
-export const LogoCon = styled.div`
-  width: 1.75rem;
-  height: 1.75rem;
+export const LogoCon = styled(Link)`
+  width: 35px;
+  height: 35px;
   display: block;
   vertical-align: middle;
   object-fit: contain;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+  }
+`;
+export const Logoimg = styled.img`
+  width: 35px;
+  height: 35px;
+  display: block;
+  vertical-align: middle;
+  object-fit: contain;
+  cursor: pointer;
   @media screen and (max-width: 768px) {
   }
 `;

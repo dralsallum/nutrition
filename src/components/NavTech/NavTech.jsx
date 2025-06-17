@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from "../../assets/drslallum.png";
+import logo from "../../assets/logo.png";
 
 /* ====== Styled Components for Navigation Bar ====== */
 const Header = styled.header`
