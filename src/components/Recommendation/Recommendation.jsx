@@ -1,12 +1,10 @@
 // Quiz.jsx
 import React, { useState, useEffect, useRef } from "react";
-
 import { publicRequest } from "../../requestMethods";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct, clearCart } from "../../redux/cartRedux";
 import Basket from "../../assets/cart.png";
 import Woman2 from "../../assets/woman2.webp";
-
 import { useNavigate } from "react-router-dom";
 import {
   Wrapper,
@@ -526,7 +524,7 @@ const Recommendation = () => {
                         </ProductPrice>
                         <AddButton
                           onClick={() => handleAddToBasket(product)}
-                          disabled={!product.inStock}
+                          disabled={!product.inStock || isInBasket}
                           isInBasket={isInBasket}
                         >
                           {!product.inStock
@@ -744,7 +742,7 @@ const Recommendation = () => {
         price: 119.99,
         oldPrice: 159.99,
         discount: 25,
-        img: "https://via.placeholder.com/200x200/96CEB4/ffffff?text=Cardio+Health",
+        img: "https://alsallum.s3.eu-north-1.amazonaws.com/cardioWork.png",
         inStock: true,
         description: "مكملات لتعزيز صحة القلب وتحسين الأداء القلبي الوعائي",
         category: "cardio-improvement",
@@ -755,7 +753,7 @@ const Recommendation = () => {
         price: 179.99,
         oldPrice: 229.99,
         discount: 22,
-        img: "https://via.placeholder.com/200x200/45B7D1/ffffff?text=Muscle+Gain",
+        img: "https://alsallum.s3.eu-north-1.amazonaws.com/muscleGain.png",
         inStock: true,
         description:
           "مجموعة متكاملة من البروتينات والأحماض الأمينية لبناء العضلات",
@@ -767,7 +765,7 @@ const Recommendation = () => {
         price: 149.99,
         oldPrice: 199.99,
         discount: 25,
-        img: "https://via.placeholder.com/200x200/FF6B6B/ffffff?text=Weight+Loss",
+        img: "https://alsallum.s3.eu-north-1.amazonaws.com/weightLoss.png",
         inStock: true,
         description:
           "برنامج شامل لفقدان الوزن يشمل مكملات طبيعية وخطة غذائية مخصصة",
@@ -779,7 +777,7 @@ const Recommendation = () => {
         price: 129.99,
         oldPrice: 169.99,
         discount: 24,
-        img: "https://via.placeholder.com/200x200/4ECDC4/ffffff?text=Weight+Gain",
+        img: "https://alsallum.s3.eu-north-1.amazonaws.com/weightGain.png",
         inStock: true,
         description: "مكملات غذائية عالية السعرات لزيادة الوزن بطريقة صحية",
         category: "weight-gain",

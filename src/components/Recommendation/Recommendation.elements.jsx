@@ -752,7 +752,7 @@ export const OrderTotalText = styled.div`
 
 export const SubmitOrderButton = styled.button`
   width: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ffaa8e 0%, #f24004 100%);
   color: white;
   border: none;
   padding: 15px 20px;
@@ -765,7 +765,7 @@ export const SubmitOrderButton = styled.button`
 
   &:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px rgba(242, 101, 51, 0.4);
   }
 
   &:disabled {

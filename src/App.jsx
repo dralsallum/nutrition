@@ -7,6 +7,7 @@ import Test from "./pages/Test";
 import { Practice, Recommendation } from "./components";
 import Onboarding from "./pages/Onboarding";
 import Outcome from "./pages/Outcome";
+import Product from "./pages/Product";
 // import other pages/components as needed
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/outcome" element={<Outcome />} />
           <Route path="/recommendation" element={<Recommendation />} />
           <Route path="/practice" element={<Practice />} />
