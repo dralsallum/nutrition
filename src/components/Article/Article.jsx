@@ -9,7 +9,7 @@ import {
   ArSubContainerF,
   ArWrapper,
 } from "./Article.elements";
-import Girl from "../../assets/girl.webp";
+import Girl from "../../assets/girl.png";
 
 const Article = () => {
   return (

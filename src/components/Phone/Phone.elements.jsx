@@ -194,6 +194,7 @@ export const ButSp = styled.span`
   font-size: 2em;
   line-height: 0;
   cursor: pointer;
+  color: #000;
 
   @media screen and (max-width: 759px) {
   }

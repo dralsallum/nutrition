@@ -17,6 +17,8 @@ import {
   DotLi,
   DotWr,
 } from "./Phone.elements";
+import Appstore from "../../assets/appstore.png";
+import Googlestore from "../../assets/googlePlay.png";
 
 const Phone = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -104,16 +106,10 @@ const Phone = () => {
       </DotWr>
       <AtWr>
         <AtAA href="">
-          <AtImg
-            src="https://d1t11jpd823i7r.cloudfront.net/homepage/Appstore.png"
-            alt=""
-          />
+          <AtImg src={Appstore} alt="" />
         </AtAA>
         <AtAA href="">
-          <AtImg
-            src="https://d1t11jpd823i7r.cloudfront.net/homepage/GooglePlay.png"
-            alt=""
-          />
+          <AtImg src={Googlestore} alt="" />
         </AtAA>
       </AtWr>
     </ArWra>

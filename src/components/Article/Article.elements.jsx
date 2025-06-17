@@ -82,4 +82,5 @@ export const ArContainerSImg = styled.img`
   height: auto;
   border-style: none;
   display: block;
+  border-radius: 12px;
 `;

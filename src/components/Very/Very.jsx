@@ -47,7 +47,7 @@ const MainHeading = styled.h1`
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 3.2rem;
-  line-height: 1.07143;
+  line-height: 1.2;
   color: #000;
   text-align: right;
 
@@ -241,19 +241,17 @@ const Very = () => {
           <ContentSection>
             <LeftDiv>
               <MainHeading>
-                تحدث مع أخصائي تغذية
+                اكتشف خطتك الصحية
                 <br />
-                مشمول بتأمينك
+                المصممة خصيصًا
                 <br />
-                الصحي
+                لاجلك
               </MainHeading>
 
               <SubText>
-                نوريش يجعل من السهل وبأسعار معقولة
+                رشيق يجعل من السهل وبأسعار معقولة
                 <br />
-                تحقيق أهدافك الصحية مع أخصائي تغذية شخصي
-                <br />
-                عبر الإنترنت وتطبيقنا المحمول.
+                تحقيق أهدافك الصحية مع خطة غذائية <br /> وشخصية عبر الإنترنت
               </SubText>
 
               <ButtonContainer>
@@ -265,7 +263,7 @@ const Very = () => {
 
               <StatText>
                 <ArrowImg src={ArrowCurve} alt="" />
-                <ArrowPara>94% من مرضى نوريش يدفعون 0 ريال من جيبهم!</ArrowPara>
+                <ArrowPara>94% من مستخدمي رشيق يعربون عن رضاهم عنه !</ArrowPara>
               </StatText>
             </LeftDiv>
           </ContentSection>
