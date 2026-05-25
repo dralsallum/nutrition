@@ -9,4 +9,8 @@ export { default as Very } from "./Very/Very";
 export { default as Phone } from "./Phone/Phone";
 export { default as Article } from "./Article/Article";
 export { default as Body } from "./Body/Body";
+export { default as Between } from "./Between/Between";
+export { default as Health } from "./Health/Health";
+export { default as NavGlass } from "./NavGlass/NavGlass";
+export { default as Monitor } from "./Monitor/Monitor";
 export { default as Footer } from "./Footer/Footer";

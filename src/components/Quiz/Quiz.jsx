@@ -1,21 +1,3 @@
-// File: src/components/Quiz/Quiz.jsx
-
-/*
- * DETAILED EXPLANATION
- * --------------------
- * This component creates a simple personality quiz UI that replaces the original Main component.
- *
- * Key changes from the original:
- * 1. Renamed the component from Main to Quiz
- * 2. Changed styled components names to be more descriptive for quiz functionality
- * 3. Added state management for quiz questions and user answers
- * 4. Added functionality to track progress and show results
- * 5. Maintained the same general structure with two wrapper sections
- *
- * The component maintains the same visual structure as the original but repurposes it
- * as an interactive quiz rather than a static banner display.
- */
-
 import React, { useState } from "react";
 import {
   QuizContainer,

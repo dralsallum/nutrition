@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// Layout Wrappers
+const ACCENT = "#B05A36";
+const ACCENT_HOVER = "#8F4729";
+const ACCENT_LIGHT = "#F5EDE8";
+const ACCENT_BORDER = "#D4886A";
+
+// ─── Layout Wrappers ──────────────────────────────────────────────────────────
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,7 +22,6 @@ export const Wrapper = styled.div`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   @media screen and (max-width: 768px) {
-    /* responsive tweaks here */
   }
 `;
 
@@ -33,7 +38,6 @@ export const LoadingWrap = styled.div`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   @media screen and (max-width: 768px) {
-    /* responsive tweaks here */
   }
 `;
 
@@ -51,11 +55,11 @@ export const WrapperForm = styled.form`
   direction: rtl;
 
   @media screen and (max-width: 768px) {
-    /* responsive tweaks here */
   }
 `;
 
-// Progress Components
+// ─── Progress Header ──────────────────────────────────────────────────────────
+
 export const ProgressHeader = styled.div`
   align-self: stretch;
   margin: 1rem 0 2rem 0;
@@ -72,9 +76,11 @@ export const LogoCon = styled(Link)`
   vertical-align: middle;
   object-fit: contain;
   cursor: pointer;
+
   @media screen and (max-width: 768px) {
   }
 `;
+
 export const Logoimg = styled.img`
   width: 35px;
   height: 35px;
@@ -82,6 +88,7 @@ export const Logoimg = styled.img`
   vertical-align: middle;
   object-fit: contain;
   cursor: pointer;
+
   @media screen and (max-width: 768px) {
   }
 `;
@@ -92,17 +99,21 @@ export const BasketImg = styled.img`
   display: block;
   vertical-align: middle;
   object-fit: contain;
+
   @media screen and (max-width: 768px) {
   }
 `;
 
 export const BackCon = styled.div`
   cursor: pointer;
-  color: ${(props) => (props.disabled ? "#ccc" : "rgb(242 101 51)")};
+  color: ${(props) => (props.disabled ? "#ccc" : ACCENT)};
   text-align: right;
+  width: 60px;
+  font-size: 14px;
+  pointer-events: ${(props) => (props.disabled ? "none" : "auto")};
 
   &:hover {
-    color: ${(props) => (props.disabled ? "#ccc" : "rgb(200 80 40)")};
+    color: ${(props) => (props.disabled ? "#ccc" : ACCENT_HOVER)};
   }
 
   @media screen and (max-width: 768px) {
@@ -210,11 +221,12 @@ export const AddedMessageNotification = styled.div`
   position: fixed;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #4caf50, #45a049);
-  color: white;
+  background: ${ACCENT_LIGHT};
+  color: ${ACCENT};
+  border: 1px solid ${ACCENT_BORDER};
   padding: 12px 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 12px rgba(176, 90, 54, 0.2);
   z-index: 1000;
   font-weight: 500;
   animation: slideIn 0.3s ease-out;
@@ -244,6 +256,7 @@ export const ProgressCon = styled.div`
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+
   @media screen and (max-width: 768px) {
   }
 `;
@@ -255,21 +268,24 @@ export const ProgressSub = styled.div`
   width: 100%;
   position: relative;
   height: 0.5rem;
+
   @media screen and (max-width: 768px) {
   }
 `;
 
 export const ProgressMeter = styled.div`
-  background-color: rgb(242 101 51);
+  background-color: ${ACCENT};
   width: ${(props) => props.progress}%;
   height: 100%;
   transition: width 0.3s ease;
   transform-origin: right center;
+
   @media screen and (max-width: 768px) {
   }
 `;
 
-// Question & Answer Containers
+// ─── Question & Answer ────────────────────────────────────────────────────────
+
 export const QueCon = styled.div`
   display: flex;
   flex-direction: column;
@@ -281,6 +297,7 @@ export const QueCon = styled.div`
   opacity: 1;
   align-items: flex-end;
   text-align: right;
+
   @media screen and (max-width: 768px) {
   }
 `;
@@ -291,6 +308,7 @@ export const QueTitCon = styled.div`
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
+
   @media screen and (max-width: 768px) {
   }
 `;
@@ -300,6 +318,7 @@ export const QueTit = styled.div`
   line-height: 2.5rem;
   text-align: right;
   width: 100%;
+
   @media screen and (max-width: 768px) {
   }
 `;
@@ -311,6 +330,7 @@ export const AnsCon = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 1rem;
+
   @media screen and (max-width: 768px) {
   }
 `;
@@ -319,6 +339,7 @@ export const AnsSub = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
   @media screen and (max-width: 768px) {
   }
 `;
@@ -335,16 +356,12 @@ export const AnsBtnCon = styled.div`
 export const AnsBtn = styled.button`
   display: flex;
   box-shadow: 0px 4px 4px -4px rgba(25, 25, 24, 0.08);
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0.75rem 1rem;
   background-color: ${(props) =>
-    props.selected ? "rgb(242 101 51)" : "rgb(255 255 255)"};
+    props.selected ? ACCENT : "rgb(255 255 255)"};
   color: ${(props) => (props.selected ? "#fff" : "#000")};
   opacity: 1;
-  border: 1px solid
-    ${(props) => (props.selected ? "rgb(242 101 51)" : "rgb(229 223 217)")};
+  border: 1px solid ${(props) => (props.selected ? ACCENT : "rgb(229 223 217)")};
   border-radius: 0.5rem;
   justify-content: space-between;
   align-items: center;
@@ -352,28 +369,34 @@ export const AnsBtn = styled.button`
   outline: none;
   text-align: right;
   direction: rtl;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s,
+    color 0.15s;
 
   &:hover {
-    border-color: ${(props) =>
-      props.selected ? "rgb(242 101 51)" : "#7c7c7c"};
+    border-color: ${(props) => (props.selected ? ACCENT : "#7c7c7c")};
+    background-color: ${(props) =>
+      props.selected ? ACCENT_HOVER : ACCENT_LIGHT};
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(242, 101, 51, 0.3);
-    border: 1px solid rgb(242 101 51);
+    box-shadow: 0 0 0 2px rgba(176, 90, 54, 0.3);
+    border: 1px solid ${ACCENT};
   }
 
   @media screen and (max-width: 768px) {
   }
 `;
 
-// Info Headers & Inputs
+// ─── Info Headers & Inputs ────────────────────────────────────────────────────
+
 export const InfoHeader = styled.h1`
   font-size: 36px;
   font-weight: 500;
   margin-bottom: 24px;
-  color: rgb(242 101 51);
+  color: ${ACCENT};
   line-height: 1.2;
 
   @media (max-width: 768px) {
@@ -396,7 +419,7 @@ export const TextInput = styled.input`
 
   &:focus {
     outline: none;
-    border-color: rgb(242 101 51);
+    border-color: ${ACCENT};
   }
 
   &::placeholder {
@@ -408,7 +431,8 @@ export const TextInput = styled.input`
   }
 `;
 
-// Footer Components
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
 export const Footer = styled.footer`
   display: flex;
   padding-left: 0.5rem;
@@ -419,8 +443,8 @@ export const Footer = styled.footer`
   flex-direction: column;
   gap: 1rem;
   margin-top: auto;
+
   @media screen and (max-width: 768px) {
-    /* responsive tweaks here */
   }
 `;
 
@@ -428,15 +452,15 @@ export const FooterBtn = styled.button`
   display: flex;
   min-width: 190px;
   width: fit-content;
-  transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke;
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   padding-left: 3rem;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   padding-right: 3rem;
-  background-color: rgb(242 101 51);
+  background-color: ${ACCENT};
   border: none;
   color: white;
   border-radius: 0.5rem;
@@ -447,8 +471,7 @@ export const FooterBtn = styled.button`
   height: 3rem;
 
   &:hover {
-    background-color: ${(props) =>
-      props.disabled ? "rgb(242 101 51)" : "rgb(220 90 45)"};
+    background-color: ${(props) => (props.disabled ? ACCENT : ACCENT_HOVER)};
   }
 
   &:focus {
@@ -457,7 +480,6 @@ export const FooterBtn = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    /* responsive tweaks here */
   }
 `;
 
@@ -468,36 +490,43 @@ export const FooterSub = styled.div`
   font-size: 0.75rem;
   line-height: 1rem;
   text-align: center;
+
   @media screen and (max-width: 768px) {
   }
 `;
 
-// Content Containers & Cards
+// ─── Content Containers & Info Cards ─────────────────────────────────────────
+
 export const ContentContainer = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   margin: 0 0 10px 0;
+  width: 680px;
+  max-width: 100%;
   justify-content: ${(props) => (props.centered ? "center" : "flex-start")};
-  text-align: ${(props) => (props.centered ? "center" : "left")};
+  align-items: ${(props) => (props.centered ? "center" : "stretch")};
+  text-align: ${(props) => (props.centered ? "center" : "right")};
 `;
 
 export const InfoSubheader = styled.h2`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 24px;
-  color: #333;
-  line-height: 1.4;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;
+
 export const InfoImg = styled.img`
   width: 100%;
   height: 300px;
   object-fit: contain;
-  border=radius: 8px;
+  border-radius: 8px;
   margin-top: 16px;
 
   @media (max-width: 768px) {
@@ -509,7 +538,6 @@ export const InfoCard = styled.div`
   border: 1px solid rgb(229 223 217);
   border-radius: 1rem;
   padding: 2rem;
-
   box-shadow: 0px 4px 4px -4px rgba(25, 25, 24, 0.08);
   text-align: right;
   direction: rtl;
@@ -523,7 +551,7 @@ export const InfoCard = styled.div`
 export const InfoCardTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 600;
-  color: rgb(242 101 51);
+  color: ${ACCENT};
   margin-bottom: 1.5rem;
   text-align: right;
 
@@ -550,17 +578,17 @@ export const InfoCardContent = styled.div`
 `;
 
 export const FactBox = styled.div`
-  background-color: #fef9f5;
+  background-color: ${ACCENT_LIGHT};
   border: 1px solid #f5e6d3;
   border-radius: 0.75rem;
   padding: 1.5rem;
   margin-top: 1.5rem;
-  border-right: 4px solid rgb(242 101 51);
+  border-right: 4px solid ${ACCENT};
 
   p {
     margin-bottom: 0;
     font-style: italic;
-    color: #5a4a3a;
+    color: #5a3020;
   }
 
   @media screen and (max-width: 768px) {
@@ -572,7 +600,7 @@ export const FactBox = styled.div`
 export const FactTitle = styled.h4`
   font-size: 1rem;
   font-weight: 600;
-  color: rgb(242 101 51);
+  color: ${ACCENT};
   margin-bottom: 0.75rem;
   text-align: right;
 
@@ -612,12 +640,109 @@ export const ChartImage = styled.div`
   }
 `;
 
-export const ResultHeader = styled.h2`
-  font-size: 28px;
-  margin-bottom: 24px;
+// ─── Result / Checkout ────────────────────────────────────────────────────────
+
+export const ResultHeader = styled.h1`
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 8px;
   text-align: center;
-  color: #333;
+  color: #1a1a1a;
+  font-family: Georgia, "Times New Roman", serif;
 `;
+
+export const OrderSummaryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 560px;
+  margin-top: 8px;
+`;
+
+export const OrderSummaryTitle = styled.h3`
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+`;
+
+export const OrderSummaryItems = styled.div`
+  margin-bottom: 15px;
+`;
+
+export const OrderItem = styled.div`
+  background: #ede8e2;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const OrderItemName = styled.span`
+  font-size: 16px;
+  color: #1a1a1a;
+  font-weight: 400;
+`;
+
+export const OrderItemDetails = styled.span`
+  font-size: 16px;
+  color: #1a1a1a;
+  white-space: nowrap;
+  margin-right: 16px;
+`;
+
+export const OrderTotalContainer = styled.div`
+  background: #ede8e2;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const OrderTotalText = styled.span`
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+
+  &:last-child {
+    white-space: nowrap;
+    margin-right: 16px;
+  }
+`;
+
+export const SubmitOrderButton = styled.button`
+  width: 100%;
+  padding: 16px;
+  background-color: ${(props) => (props.disabled ? "#c4956e" : ACCENT)};
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 4px;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  direction: rtl;
+
+  &:hover:not(:disabled) {
+    background-color: ${ACCENT_HOVER};
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.99);
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+// ─── Legacy product card exports (kept for import compatibility) ───────────────
 
 export const ProductsContainer = styled.div`
   display: grid;
@@ -683,7 +808,7 @@ export const DiscountTag = styled.span`
 export const AddButton = styled.button`
   width: 100%;
   padding: 10px;
-  background-color: rgb(242 101 51);
+  background-color: ${ACCENT};
   color: white;
   border: none;
   border-radius: 6px;
@@ -693,7 +818,7 @@ export const AddButton = styled.button`
   margin-top: auto;
 
   &:hover {
-    background-color: #a26a4a;
+    background-color: ${ACCENT_HOVER};
   }
 
   &:focus {
@@ -704,85 +829,5 @@ export const AddButton = styled.button`
   &:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
-  }
-`;
-
-// Order Summary Components
-export const OrderSummaryContainer = styled.div`
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 30px;
-  border: 1px solid #e9ecef;
-`;
-
-export const OrderSummaryTitle = styled.h3`
-  color: #2c3e50;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: 600;
-`;
-
-export const OrderSummaryItems = styled.div`
-  margin-bottom: 15px;
-`;
-
-export const OrderItem = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #dee2e6;
-
-  &:last-child {
-    border-bottom: none;
-  }
-`;
-
-export const OrderItemName = styled.span`
-  font-weight: 500;
-  color: #495057;
-`;
-
-export const OrderItemDetails = styled.span`
-  color: #6c757d;
-  font-size: 14px;
-`;
-
-export const OrderTotalContainer = styled.div`
-  padding-top: 15px;
-  border-top: 2px solid #dee2e6;
-  margin-top: 15px;
-`;
-
-export const OrderTotalText = styled.div`
-  font-size: 18px;
-  font-weight: 700;
-  color: #2c3e50;
-  text-align: center;
-`;
-
-export const SubmitOrderButton = styled.button`
-  width: 100%;
-  background: linear-gradient(135deg, #ffaa8e 0%, #f24004 100%);
-  color: white;
-  border: none;
-  padding: 15px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(242, 101, 51, 0.4);
-  }
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
   }
 `;
