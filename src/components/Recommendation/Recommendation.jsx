@@ -130,6 +130,10 @@ export const BackCon = styled.button`
   font-family: inherit;
   width: 64px;
   text-align: center;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
   &:hover {
     background: ${({ disabled }) => (disabled ? "transparent" : C.bgAccent)};
     border-color: ${({ disabled }) => (disabled ? "transparent" : C.primary)};
@@ -325,8 +329,12 @@ export const AnsBtn = styled.button`
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  outline: none;
   box-shadow: ${({ selected }) =>
     selected ? `0 0 0 3px ${C.primary}22` : "none"};
+  &:focus {
+    outline: none;
+  }
   &:hover {
     border-color: ${C.primary};
     background: ${C.bgAccent};
@@ -362,6 +370,7 @@ export const TextInput = styled.input`
   font-family: inherit;
   outline: none;
   box-sizing: border-box;
+  outline: none;
   transition:
     border-color 0.15s,
     box-shadow 0.15s;
@@ -370,6 +379,7 @@ export const TextInput = styled.input`
   &:focus {
     border-color: ${C.primary};
     box-shadow: 0 0 0 3px ${C.primary}22;
+    outline: none;
   }
   &::placeholder {
     color: ${C.textMute};
@@ -391,6 +401,7 @@ export const FooterBtn = styled.button`
   padding: 16px;
   border-radius: 50px;
   border: none;
+  outline: none;
   background: ${({ disabled }) =>
     disabled
       ? "#d4c8be"
@@ -404,6 +415,10 @@ export const FooterBtn = styled.button`
   letter-spacing: 0.3px;
   box-shadow: ${({ disabled }) =>
     disabled ? "none" : `0 4px 16px ${C.primary}44`};
+  &:focus {
+    outline: none;
+  }
+
   &:hover:not(:disabled) {
     background: linear-gradient(135deg, ${C.primaryLt} 0%, ${C.primary} 100%);
     transform: translateY(-2px);
@@ -582,6 +597,10 @@ export const ConsentCheckbox = styled.input`
   cursor: pointer;
   accent-color: ${C.primary};
   border-radius: 4px;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const ConsentLabel = styled.label`
@@ -627,6 +646,10 @@ export const SubmitOrderButton = styled.button`
   letter-spacing: 0.3px;
   box-shadow: ${({ disabled }) =>
     disabled ? "none" : `0 4px 16px ${C.primary}44`};
+  outline: none;
+  &:focus {
+    outline: none;
+  }
   &:hover:not(:disabled) {
     background: linear-gradient(135deg, ${C.primaryLt} 0%, ${C.primary} 100%);
     transform: translateY(-2px);
