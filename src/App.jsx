@@ -17,8 +17,7 @@ const App = () => {
       <GlobalStyle />
       <div style={{ width: "100%", overflow: "hidden" }}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/care" element={<Care />} />
+          <Route path="/" element={<Care />} />
           <Route path="/test" element={<Test />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/outcome" element={<Outcome />} />
